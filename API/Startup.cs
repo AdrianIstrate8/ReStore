@@ -95,6 +95,7 @@ namespace API
 
             services.AddAuthorization();
             services.AddScoped<TokenService>();
+            services.AddScoped<PaymentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -118,6 +119,7 @@ namespace API
                 opt.AllowAnyHeader()
                    .AllowAnyMethod()
                    .AllowCredentials()
+                   //.AllowAnyOrigin();
                    .WithOrigins("http://localhost:3000");
             });
 
